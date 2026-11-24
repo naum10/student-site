@@ -1,0 +1,250 @@
+/* --- 1. БАЗОВЫЕ НАСТРОЙКИ И СБРОС ОТСТУПОВ --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Современный шрифт */
+}
+
+body {
+    background-color: #f4f7f6; /* Светло-серый фон, чтобы белые карточки выделялись */
+    color: #333; /* Темно-серый цвет текста (глазам легче, чем чисто черный) */
+    line-height: 1.6; /* Межстрочный интервал для читаемости */
+}
+
+/* --- 2. ШАПКА САЙТА (HEADER) --- */
+header {
+    background-color: #1a365d; /* Темно-синий цвет */
+    color: white;
+    padding: 15px 30px;
+    display: flex; /* Выстраиваем логотип и меню в одну линию */
+    justify-content: space-between; /* Разносим их по краям */
+    align-items: center;
+    position: sticky; /* Шапка прилипает к верху при прокрутке */
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    margin-left: 20px;
+    font-size: 15px;
+    transition: color 0.3s; /* Плавная смена цвета */
+}
+
+nav a:hover {
+    color: #f6ad55; /* При наведении ссылки становятся оранжевыми */
+}
+
+/* --- 3. ГЛАВНЫЙ ЭКРАН (HERO) --- */
+.hero {
+    background: linear-gradient(135deg, #2b6cb0, #1a365d); /* Градиент от синего к темно-синему */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ed8936; /* Оранжевая кнопка */
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 8px; /* Скругленные углы */
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #dd6b20; /* Темнеет при наведении */
+    transform: translateY(-2px); /* Кнопка чуть-чуть приподнимается */
+}
+
+/* --- 4. СЕКЦИИ И ИХ ЗАГОЛОВКИ --- */
+section {
+    padding: 60px 20px;
+    max-width: 1100px; /* Ограничиваем ширину контента */
+    margin: 0 auto; /* Центрируем контент на экране */
+}
+
+section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #1a365d;
+}
+
+/* --- 5. КАРТОЧКИ СПЕЦИАЛЬНОСТЕЙ --- */
+.cards {
+    display: flex; /* Ставим карточки в ряд */
+    gap: 20px; /* Расстояние между ними */
+    justify-content: center;
+    flex-wrap: wrap; /* Если экран маленький, карточки перенесутся на новую строку */
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Легкая тень */
+    flex: 1; /* Карточки одинаковой ширины */
+    min-width: 280px; /* Минимальная ширина карточки */
+    border-top: 5px solid #ed8936; /* Оранжевая полоска сверху для красоты */
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Карточка приподнимается при наведении */
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #2b6cb0;
+    min-height: 50px; /* Чтобы заголовки разной длины не ломали сетку */
+}
+
+/* --- 6. СПИСОК ДОКУМЕНТОВ И FAQ --- */
+.docs-list {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    list-style-type: none; /* Убираем стандартные точки */
+    display: grid; /* Делаем сетку для списка */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* В две колонки на больших экранах */
+    gap: 15px;
+}
+
+.docs-list li {
+    padding-left: 25px;
+    position: relative;
+}
+
+/* Добавляем красивую галочку вместо точек */
+.docs-list li::before {
+    content: "✔";
+    color: #48bb78; /* Зеленая галочка */
+    position: absolute;
+    left: 0;
+}
+
+.important {
+    background-color: #feebc8; /* Светло-оранжевый фон */
+    color: #c05621;
+    padding: 15px;
+    border-left: 5px solid #ed8936;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+details {
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    cursor: pointer; /* Показывает, что на блок можно нажать */
+}
+
+summary {
+    font-weight: bold;
+    color: #1a365d;
+    font-size: 16px;
+}
+
+details p {
+    margin-top: 10px;
+    color: #555;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+/* --- 7. КОНТАКТЫ И ПОДВАЛ --- */
+#contacts {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+footer {
+    background-color: #1a365d;
+    color: #a0aec0;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+}
+/* --- 8. АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (Медиа-запросы) --- */
+
+@media (max-width: 768px) {
+    /* Шапка */
+    header {
+        flex-direction: column; /* Логотип и меню встают друг под другом */
+        text-align: center;
+        padding: 10px;
+    }
+    
+    nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap; /* Если меню не влезает, оно перенесется на новую строку */
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 5px 10px;
+        font-size: 14px;
+    }
+
+    /* Главный экран */
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 26px; /* Уменьшаем заголовок на телефоне */
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Карточки */
+    .cards {
+        flex-direction: column; /* Карточки встают в один столбец */
+    }
+
+    /* Список документов */
+    .docs-list {
+        grid-template-columns: 1fr; /* Список документов в одну колонку на телефоне */
+        padding: 15px;
+    }
+
+    /* Секции */
+    section {
+        padding: 40px 15px;
+    }
+}
